@@ -1,7 +1,7 @@
 # vibtools
 
 [![tests](https://github.com/hamidattaran/vibtools/actions/workflows/tests.yml/badge.svg)](https://github.com/hamidattaran/vibtools/actions/workflows/tests.yml)
-![python](https://img.shields.io/badge/python-3.9%2B-blue)
+![python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
 Python tools for processing shock and vibration test data and correlating it with finite-element
@@ -30,7 +30,7 @@ python -m vibtools.gui                       # desktop window
 python examples/demo_correlation.py          # end-to-end test-vs-FEA demo, writes demo_output.png
 ```
 
-Requires Python 3.9+, numpy and scipy. matplotlib is needed for plots, pytest for the tests.
+Requires Python 3.11+, numpy and scipy. matplotlib is needed for plots, pytest for the tests.
 
 ## Command line
 

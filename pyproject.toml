@@ -9,7 +9,7 @@ authors = [{ name = "Hamid Attaran" }]
 readme = "README.md"
 license = { text = "MIT" }
 description = "Shock and vibration test-data processing and FEA correlation helpers"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = ["numpy", "scipy"]
 
 [project.optional-dependencies]
