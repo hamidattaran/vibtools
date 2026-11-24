@@ -1,0 +1,32 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+env:
+  PYTHONIOENCODING: utf-8
+  MPLBACKEND: Agg
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: python -m pip install -e ".[demo,test]"
+      - name: Test
+        run: python -m pytest -q
+      - name: Example data and CLI smoke test
+        run: |
+          python examples/make_example_data.py example_data
+          python -m vibtools selftest
+          python -m vibtools frf example_data/shaker_random_run.csv --input control --output tip

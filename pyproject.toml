@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vibtools"
+version = "0.4.0"
+authors = [{ name = "Hamid Attaran" }]
+readme = "README.md"
+license = { text = "MIT" }
+description = "Shock and vibration test-data processing and FEA correlation helpers"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy"]
+
+[project.optional-dependencies]
+demo = ["matplotlib"]
+test = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/hamidattaran/vibtools"
+
+[tool.setuptools]
+packages = ["vibtools"]
